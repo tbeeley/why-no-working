@@ -28,6 +28,10 @@ group :development, :test do
 	gem 'capybara'
 end
 
+group :production do
+  gem 'rails_12factor', '0.0.2'
+end
+
 gem 'paperclip', github: 'thoughtbot/paperclip'
 
 
