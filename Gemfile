@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise', '~> 3.4.1'
+gem 'simple_form', '~> 3.0.0.rc' 
 
 group :development, :test do
 	gem 'rspec-rails'

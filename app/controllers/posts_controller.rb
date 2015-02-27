@@ -30,13 +30,4 @@ class PostsController < ApplicationController
      params.require(:post).permit(:title, :picture, :user_id)
   end
 
-	# private
- #  # Use callbacks to share common setup or constraints between actions.
- # 	def set_bookmark
- #      unless @post = Post.first
- #        flash[:alert] = 'Post not found.'
- #        redirect_to root_url
- #      end
- #  end
-
 end
