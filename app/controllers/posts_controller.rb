@@ -28,17 +28,29 @@ class PostsController < ApplicationController
 	def upvote
 	  @post = Post.find(params[:id])
 	  @post.upvote_by current_user
-	  redirect_to posts_path
+	  redirect_to '/'
 	end
 
 	def downvote
-	  @link = Link.find(params[:id])
-	  @link.downvote_by current_user
-	  redirect_to links_path
+	  @post = Post.find(params[:id])
+	  @post.downvote_by current_user
+	  redirect_to '/'
 	end
 
   def post_params
      params.require(:post).permit(:title, :picture, :user_id)
   end
+
+
+
+  #Work tomorrow
+  #Test upvoting
+  #Try to integrate Ace
+  #Order by community score
+  
+
+
+
+
 
 end
