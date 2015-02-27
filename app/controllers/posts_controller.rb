@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	# before_action :authenticate_user!
+	before_action :authenticate_user!
 
 		#Try doing current_user.posts
 		#This will allow only access to posts by current user. 
