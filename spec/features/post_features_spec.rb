@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 describe 'posts' do
+
+		before(:each) do 
+			user = User.create(email: 'tbeeley@hotmail.com', password: '12345678', password_confirmation: '12345678')
+			visit '/users/sign_in'
+			fill_in 'Email', with: 'tbeeley@hotmail.com'
+			fill_in 'Password', with: '12345678'
+			click_button 'Log in'
+		end
+
 	context 'no posts' do
 		
 		it 'shows a message' do
@@ -21,8 +30,8 @@ describe 'posts' do
 			expect(page).to have_content('Pls make website') 
 		end
 	end
-	
-	describe 'creating posts' do
+
+	context 'creating posts' do
 
 		it 'adds the posts from a form' do
 			visit '/posts'
