@@ -6,7 +6,6 @@
   <tbody>
 	<% @posts.each do |post| %>
 		<h3><%= post.title %></h3>
-		<?<%= post.user.email %>?>
 		<%= image_tag post.picture.url, class: 'uploaded-pic' %>
   <% end %>
   </tbody>
