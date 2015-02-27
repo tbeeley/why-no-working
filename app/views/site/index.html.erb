@@ -8,6 +8,7 @@
 		<h3><%= post.title %></h3>
 		<%= post.user.email %>   <!-- Heroku can't deal with this, no clue why
 		<%= image_tag post.picture.url, class: 'uploaded-pic' %>
+		<%= link_to "upvote", like_post_path(post), method: :put %>
   <% end %>
   </tbody>
 </table>

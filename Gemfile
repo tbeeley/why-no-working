@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.4.1'
 gem 'foundation-rails'
 gem 'simple_form', '~> 3.0.0.rc' 
+gem 'acts_as_votable'
+
 
 group :development, :test do
 	gem 'rspec-rails'

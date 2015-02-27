@@ -26,7 +26,7 @@ describe 'user management' do
 			fill_in 'Email', with: 'tbeeley@hotmail.com'
 			fill_in 'Password', with: '12345678'
 			click_button 'Log in'
-			expect(page).to have_content 'Signed in successfully.'
+			expect(page).to have_content 'Latest Posts'
 		end
 
 	end
