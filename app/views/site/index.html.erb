@@ -1,0 +1,14 @@
+<h2>Latest Posts</h2>
+
+<th><%= link_to 'Sign up', new_user_registration_path %></th> 
+<th><%= link_to 'Write your own post', new_post_path %></th> 
+
+  <tbody>
+	<% @posts.each do |post| %>
+		<h3><%= post.title %></h3>
+		<%= post.user.email %>
+		<%= image_tag post.picture.url, class: 'uploaded-pic' %>
+  <% end %>
+  </tbody>
+</table>
+

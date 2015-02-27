@@ -7,25 +7,28 @@ class PostsController < ApplicationController
 
 	#GET
 	def index
-		@posts = Post.all
+		@posts = current_user.posts
 		# @posts = current_user.posts.order(:created_at)
 	end
 
-	# def show
-	# end
+	def show
+	end
 
 	#GET
 	def new 
-		@post = Post.new
+		@post = current_user.posts.new
 	end
 
 	#POST
 	def create
-		@post = Post.new(params[:post].permit(:title, :picture))
+		@post = current_user.posts.new(post_params)
 		@post.save
-		redirect_to '/posts'
+		redirect_to '/posts', notice: 'Post was successfully created'
 	end
 
+  def post_params
+     params.require(:post).permit(:title, :picture, :user_id)
+  end
 
 	# private
  #  # Use callbacks to share common setup or constraints between actions.
