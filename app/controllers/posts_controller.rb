@@ -31,6 +31,12 @@ class PostsController < ApplicationController
 	  redirect_to posts_path
 	end
 
+	def downvote
+	  @link = Link.find(params[:id])
+	  @link.downvote_by current_user
+	  redirect_to links_path
+	end
+
   def post_params
      params.require(:post).permit(:title, :picture, :user_id)
   end

@@ -7,4 +7,8 @@ class Post < ActiveRecord::Base
 
   validates :title, length: { minimum: 2 }, presence: true
 
+  def score
+  	self.get_upvotes.size - self.get_downvotes.size
+	end
+
 end

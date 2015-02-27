@@ -6,9 +6,11 @@
   <tbody>
 	<% @posts.each do |post| %>
 		<h3><%= post.title %></h3>
-		<%= post.user.email %>   <!-- Heroku can't deal with this, no clue why
+		<%= post.user.email %>   
 		<%= image_tag post.picture.url, class: 'uploaded-pic' %>
 		<%= link_to "upvote", like_post_path(post), method: :put %>
+		<%= link_to "downvote", dislike_post_path(post), method: :put %>
+		<h4> Community Score: <%= post.score %></h4>
   <% end %>
   </tbody>
 </table>

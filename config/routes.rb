@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   get 'site/index'
 
   devise_for :users
-  resources :posts
-  member do
-    put "like", to: "links#upvote"
-    put "dislike", to: "links#downvote"
+
+  resources :posts do
+    member do
+      put "like", to: "posts#upvote"
+      put "dislike", to: "posts#downvote"
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
