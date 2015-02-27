@@ -8,7 +8,6 @@ class PostsController < ApplicationController
 	#GET
 	def index
 		@posts = current_user.posts
-		# @posts = current_user.posts.order(:created_at)
 	end
 
 	def show
@@ -29,14 +28,5 @@ class PostsController < ApplicationController
   def post_params
      params.require(:post).permit(:title, :picture, :user_id)
   end
-
-	# private
- #  # Use callbacks to share common setup or constraints between actions.
- # 	def set_bookmark
- #      unless @post = Post.first
- #        flash[:alert] = 'Post not found.'
- #        redirect_to root_url
- #      end
- #  end
 
 end
