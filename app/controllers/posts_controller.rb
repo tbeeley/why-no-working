@@ -8,7 +8,6 @@ class PostsController < ApplicationController
 	#GET
 	def index
 		@posts = current_user.posts
-		# @posts = current_user.posts.order(:created_at)
 	end
 
 	def show
