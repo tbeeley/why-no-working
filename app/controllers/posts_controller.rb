@@ -8,10 +8,11 @@ class PostsController < ApplicationController
 	#GET
 	def index
 		@posts = Post.all
+		# @posts = current_user.posts.order(:created_at)
 	end
 
-	def show
-	end
+	# def show
+	# end
 
 	#GET
 	def new 
@@ -24,5 +25,15 @@ class PostsController < ApplicationController
 		@post.save
 		redirect_to '/posts'
 	end
+
+
+	# private
+ #  # Use callbacks to share common setup or constraints between actions.
+ # 	def set_bookmark
+ #      unless @post = Post.first
+ #        flash[:alert] = 'Post not found.'
+ #        redirect_to root_url
+ #      end
+ #  end
 
 end
