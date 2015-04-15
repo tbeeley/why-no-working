@@ -1,6 +1,6 @@
 <% if @posts.any? %>
 	<% @posts.each do |post| %>
-		<h3><%= post.title %></h3>
+		<h3><%= post.title, TEST %></h3>
 		<%= image_tag post.picture.url, class: 'uploaded-pic' %>
 	<% end %>
 <% else %>
