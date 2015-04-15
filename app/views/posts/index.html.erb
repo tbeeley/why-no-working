@@ -1,10 +1,10 @@
 <% if @posts.any? %>
 	<% @posts.each do |post| %>
 		<h3><%= post.title %></h3>
-		<%= image_tag post.picture.url, post.title class: 'uploaded-pic' %>
+		<%= image_tag post.picture.url class: 'uploaded-pic' %>
 	<% end %>
 <% else %>
-	No pos6ts yet
+	No pos7ts yet
 <% end %>
 
 
